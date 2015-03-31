@@ -60,7 +60,7 @@ classdef TestConfigurationProvider < handle
             dac.samprate = 100e6;
             samplesInPeriod = self.mask.period * dac.samprate / 1e6;
             dac.masks = { self.mask };
-            dac.configureMeasurement(samplesInPeriod, self.pulseBuilder.pulseCount, 1, operation);
+            dac.configureMeasurement(samplesInPeriod, self.pulseBuilder.pulseCount, operation);
         end
         
     end

@@ -33,7 +33,7 @@ classdef RandomTestPulseBuilder < TestPulseBuilder
             readoutDuration = mask.period;
             voltagesAmount = ceil(readoutDuration / self.voltageHoldDuration);
             
-            randomVoltages = rand(1, voltagesAmount) * 2 - 1;
+            randomVoltages = (rand(1, voltagesAmount) * 2 - 1)*0.5;
             pulse.data.pulsetab = zeros(2, voltagesAmount);
             pulse.data.pulsetab(1, :) = linspace(mask.begin, mask.end, voltagesAmount);
             pulse.data.pulsetab(2, :) = randomVoltages;
